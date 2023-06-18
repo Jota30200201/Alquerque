@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane id="AnchorPane" prefHeight="398.0" prefWidth="681.0" styleClass="BG" stylesheets="@TPGit/build/classes/trabalhopratico/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trabalhopratico.FXMLDocumentController">
+    <children>
+      <MediaView fx:id="mv" fitHeight="200.0" fitWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="481.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="btn_play" layoutX="281.0" layoutY="34.0" mnemonicParsing="false" onAction="#onClick_btn_play" prefHeight="44.0" prefWidth="90.0" text="Play" />
+      <Button fx:id="btn_stop" layoutX="281.0" layoutY="93.0" mnemonicParsing="false" onAction="#onClick_btn_stop" prefHeight="44.0" prefWidth="90.0" text="Parar" />
+      <TextArea editable="false" layoutX="408.0" layoutY="7.0" prefHeight="390.0" prefWidth="312.0" text="1.&#10;O objetivo deste jogo é capturar todas as peças adversárias ou fazer com que o jogador&#10;adversário não possa fazer uma jogada válida.&#10;2.&#10;As peças podem mover&#10;se apenas uma casa para cima, diagonalmente para a frente ou na&#10;horizontal, mas não podem andar para trás.&#10;3.&#10;Se uma peça se encontra junto a uma peça adversária (em direção para a qual se possa&#10;mover) e a casa a seguir, depois da peça adversária está livre, então o jogador tem que&#10;capturar a peça adversária saltando lhe por cima e removendo a do tabuleiro. Se, após o&#10;salto, for possível saltar sobre outra peça do adversário o jogador é obrigado a capturar essa&#10;peça também. Ou seja o jogador pode capturar várias peças numa só jogada.&#10;4.&#10;O jogador pode saltar sobre as peças do adversário para as capturar, mas não sobre as suas&#10;próprias peças. Se o jogador tiver mais de uma possibilidade de capturar peças adversárias ele&#10;pode escolher qualquer uma delas. As capturas são obrigatórias.&#10;5.&#10;Se uma peça atinge o lado oposto do tabuleiro (a última linha) não pode fazer mais nenhuma&#10;jogada e deve aí permanecer até ao fim do jogo só podendo saltar sobre uma peça adversária&#10;horizontalmente.&#10;6.&#10;Uma peça não pode voltar ao círculo onde estava na jogada anterior." wrapText="true" />
+    </children>
+</AnchorPane>
