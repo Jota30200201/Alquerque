@@ -25,7 +25,7 @@ public class Servidor {
     
     public Servidor(){
         
-        System.out.println("-----Game Server------");
+        System.out.println("-----Servidor------");
         numPlayers = 0;
         try {
             ss=new ServerSocket(51734);

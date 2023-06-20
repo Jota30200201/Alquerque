@@ -58,7 +58,7 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author joaop
+ * @author joaorosa
  */
 public class Alquerque extends Application {
     
@@ -94,8 +94,8 @@ public class Alquerque extends Application {
     private boolean movimentoDisabled = false;
     
     Button butao = new Button("Ajuda");
-    Button butao2 = new Button("C/som");
-    Button butao3 = new Button("S/som");
+    Button butao2 = new Button("🔊");
+    Button butao3 = new Button("🔇");
     
     Media media = null;
     
@@ -152,10 +152,10 @@ public class Alquerque extends Application {
         
         butao.setLayoutY(470);
         butao.setLayoutX(537);
-        butao2.setLayoutY(430);
-        butao2.setLayoutX(560);
+        butao2.setLayoutY(400);
+        butao2.setLayoutX(547);
         butao3.setLayoutY(430);
-        butao3.setLayoutX(505);
+        butao3.setLayoutX(547);
         
         root.getChildren().addAll(tabuleiro_Group, pecaGroupW, pecaGroupB, label1, suaLabel, butao, butao2, butao3);
       
@@ -290,7 +290,7 @@ public class Alquerque extends Application {
         if ((newX==pecaGroupW.getChildren().get(k).getLayoutX()/100 && newY==pecaGroupW.getChildren().get(k).getLayoutY()/100) || (newX==pecaGroupB.getChildren().get(k).getLayoutX()/100 && newY==pecaGroupB.getChildren().get(k).getLayoutY()/100)){
            this.label1.setText("Jogada Inválida. Repete!");
            turnosFeitos();
-           return new MovimentoResultado(MovimentoTipo.None); 
+           return new MovimentoResultado(MovimentoTipo.Nenhum); 
         }
        int x0 = toBoard(piece.getOldX());
        int y0 = toBoard(piece.getOldY());
@@ -395,7 +395,7 @@ public class Alquerque extends Application {
        
        
       
-       return new MovimentoResultado(MovimentoTipo.None);
+       return new MovimentoResultado(MovimentoTipo.Nenhum);
     }
     
     private int toBoard(double pixel){
@@ -406,7 +406,7 @@ public class Alquerque extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLDocument.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXML_Ajuda.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         
         String backgroundMusicPath = null;
@@ -433,12 +433,7 @@ public class Alquerque extends Application {
             }
         };
          
-        EventHandler<ActionEvent> evento2 = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e)
-            {
-               Platform.exit();
-            }
-        };
+        
         
         EventHandler<ActionEvent> evento3 = new EventHandler<ActionEvent>() {
             public void handle(ActionEvent e)
@@ -484,7 +479,7 @@ public class Alquerque extends Application {
                 int y0 = toBoard(peca.getOldY());
 
                 switch (result.getType()) {
-                    case None:
+                    case Nenhum:
                         peca.abortMove();
                         break;
                     case Normal:

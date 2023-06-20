@@ -10,5 +10,5 @@ package alquerque;
  * @author joaorosa
  */
 public enum MovimentoTipo {
-    None, Normal, mata;
+    Nenhum, Normal, mata;
 }
